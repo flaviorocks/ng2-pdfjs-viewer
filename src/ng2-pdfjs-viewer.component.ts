@@ -2,7 +2,14 @@ import { Component, Input, Output, ViewChild, EventEmitter, ElementRef } from '@
 
 @Component({
   selector: 'ng2-pdfjs-viewer',
-  template: `<iframe title="ng2-pdfjs-viewer" [hidden]="externalWindow || (!externalWindow && !pdfSrc)" #iframe width="100%" height="100%"></iframe>`
+  template: `<iframe 
+    title="ng2-pdfjs-viewer" 
+    [hidden]="externalWindow || (!externalWindow && !pdfSrc)" 
+    [allowfullscreen]="fullScreen"
+    #iframe
+    width="100%"
+    height="100%"
+  ></iframe>`
 })
 export class PdfJsViewerComponent {
   @ViewChild('iframe', {static: true}) iframe: ElementRef;
